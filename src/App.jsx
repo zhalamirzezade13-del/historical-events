@@ -7,6 +7,13 @@ import EventDetail from "./pages/EventDetail";
 function HomePage() {
   const [search, setSearch] = useState("");
 
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   const filteredEvents = events.filter((event) =>
     event.title.toLowerCase().includes(search.toLowerCase()) ||
     event.country.toLowerCase().includes(search.toLowerCase()) ||
@@ -26,19 +33,24 @@ function HomePage() {
 
   return (
     <div>
-      <header className="hero">
+      <header className="hero" id="home">
         <nav className="navbar">
-          <h2>HistoryScope</h2>
+          <button className="logo" onClick={() => scrollToSection("home")}>
+            HistoryScope
+          </button>
+
           <div>
-            <a href="#events">Events</a>
-            <a href="#timeline">Timeline</a>
-            <a href="#footer">About</a>
-            </div>
-            </nav>
+            <button onClick={() => scrollToSection("events")}>Events</button>
+            <button onClick={() => scrollToSection("timeline")}>Timeline</button>
+            <button onClick={() => scrollToSection("footer")}>About</button>
+          </div>
+        </nav>
 
         <div className="hero-content">
           <span className="tag">Explore the past</span>
+
           <h1>Explore Humanity's Most Significant Moments</h1>
+
           <p>
             Discover major disasters, conflicts, discoveries and turning points
             that changed the course of history.
@@ -51,9 +63,12 @@ function HomePage() {
             onChange={(e) => setSearch(e.target.value)}
           />
 
-          <a href="#events" className="hero-button">
+          <button
+            className="hero-button"
+            onClick={() => scrollToSection("events")}
+          >
             Start Exploring
-          </a>
+          </button>
         </div>
       </header>
 
@@ -62,10 +77,12 @@ function HomePage() {
           <h3>20+</h3>
           <p>Historical Events</p>
         </div>
+
         <div>
           <h3>100+</h3>
           <p>Years Covered</p>
         </div>
+
         <div>
           <h3>10+</h3>
           <p>Countries & Regions</p>
@@ -110,6 +127,7 @@ function HomePage() {
             {timelineEvents.map((event) => (
               <div className="timeline-item" key={event.id}>
                 <div className="timeline-year">{event.year}</div>
+
                 <div className="timeline-content">
                   <h3>{event.title}</h3>
                   <p>{event.country}</p>

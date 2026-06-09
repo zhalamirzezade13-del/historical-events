@@ -504,3 +504,27 @@ body {
 #footer {
   scroll-margin-top: 40px;
 }
+
+.navbar button {
+  background: none;
+  border: none;
+  margin-left: 28px;
+  color: #f7ead0;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+.navbar button:hover {
+  color: #e6c27a;
+}
+
+.logo {
+  margin-left: 0 !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: 32px !important;
+  letter-spacing: 1px;
+  color: #e6c27a !important;
+  text-decoration: none;
+  font-weight: bold;
+}
