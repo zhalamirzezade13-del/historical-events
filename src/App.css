@@ -498,3 +498,9 @@ body {
     min-width: 75px;
   }
 }
+
+#events,
+#timeline,
+#footer {
+  scroll-margin-top: 40px;
+}

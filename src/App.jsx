@@ -30,11 +30,11 @@ function HomePage() {
         <nav className="navbar">
           <h2>HistoryScope</h2>
           <div>
-            <a href="#timeline">Timeline</a>
             <a href="#events">Events</a>
+            <a href="#timeline">Timeline</a>
             <a href="#footer">About</a>
-          </div>
-        </nav>
+            </div>
+            </nav>
 
         <div className="hero-content">
           <span className="tag">Explore the past</span>
